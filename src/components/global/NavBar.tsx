@@ -5,10 +5,10 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur border-b border-gray-200 text-gray-800">
-      <div className="container mx-auto px-6 py-4 flex items-center justify-center">
+      <div className="container mx-auto px-6 py-4 flex flex-col sm:flex-row items-center sm:justify-between gap-3">
         <Link
           href="/"
-          className="absolute left-6 flex items-center gap-2 text-lg font-bold tracking-wider hover:text-gray-600 transition"
+          className="flex items-center gap-2 text-lg font-bold tracking-wider hover:text-gray-600 transition"
         >
           <span className="flex gap-0.5">
             <span className="w-2 h-2 rounded-sm bg-pink-400" />
@@ -18,7 +18,7 @@ export default function Navbar() {
           </span>
           <span>Sulthoni Akbar</span>
         </Link>
-        <div className="rounded-full border border-gray-300 bg-white px-6 py-2 text-sm font-medium text-gray-700 shadow-sm">
+        <div className="rounded-full border border-gray-300 bg-white px-5 py-2 text-sm font-medium text-gray-700 shadow-sm">
           Portofolio
         </div>
       </div>

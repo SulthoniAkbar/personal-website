@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -28,7 +28,7 @@ export default function PortfolioCard({
   technology = [],
 }: CardProps) {
   const detailHref = slug ? `/portofolio/${encodeURIComponent(slug)}` : null;
-  const fullText = (shortDesc ?? description)?.trim() || "—";
+  const fullText = (shortDesc ?? description)?.trim() || "--";
   const isLong = fullText.length > MAX_PREVIEW_CHARS;
   const [expanded, setExpanded] = useState(false);
 
@@ -88,11 +88,11 @@ export default function PortfolioCard({
           </div>
         )}
 
-        <div className="flex gap-2 flex-wrap mt-auto">
+        <div className="flex flex-col sm:flex-row gap-2 mt-auto">
           {detailHref && (
             <Link
               href={detailHref}
-              className="flex-1 min-w-[120px] text-center bg-purple-600 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-purple-700 transition"
+              className="w-full sm:flex-1 sm:min-w-[120px] text-center bg-purple-600 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-purple-700 transition"
             >
               Detail Project
             </Link>
@@ -102,7 +102,7 @@ export default function PortfolioCard({
               href={projectLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 min-w-[100px] text-center bg-gray-200 text-gray-800 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-300 transition"
+              className="w-full sm:flex-1 sm:min-w-[100px] text-center bg-gray-200 text-gray-800 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-300 transition"
             >
               Visit Project
             </a>
@@ -112,7 +112,7 @@ export default function PortfolioCard({
               href={linkGithub}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 min-w-[80px] text-center bg-gray-800 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-gray-900 transition"
+              className="w-full sm:flex-1 sm:min-w-[80px] text-center bg-gray-800 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-gray-900 transition"
             >
               GitHub
             </a>
@@ -122,4 +122,3 @@ export default function PortfolioCard({
     </div>
   );
 }
-

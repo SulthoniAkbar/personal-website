@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 
@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6 gap-4">
         <Link
           href="/"
-          className="flex items-center gap-2 text-sm font-bold text-gray-700"
+          className="flex flex-wrap items-center justify-center md:justify-start gap-2 text-sm font-bold text-gray-700 text-center md:text-left"
         >
           <span className="flex gap-0.5">
             <span className="w-1.5 h-1.5 rounded-sm bg-pink-400" />
@@ -16,7 +16,7 @@ export default function Footer() {
             <span className="w-1.5 h-1.5 rounded-sm bg-blue-600" />
             <span className="w-1.5 h-1.5 rounded-sm bg-amber-400" />
           </span>
-          <span>Copyright © Created by Muhammad Sulthoni Akbar.</span>
+          <span>Copyright (c) Created by Muhammad Sulthoni Akbar.</span>
         </Link>
         <div className="flex flex-col items-center md:items-end">
           <span className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">

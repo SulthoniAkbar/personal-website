@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -30,7 +30,7 @@ export default async function PortofolioDetailPage({ params }: Props) {
           href="/#porto"
           className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8 text-sm font-medium"
         >
-          ← Kembali ke Portofolio
+          <- Kembali ke Portofolio
         </Link>
 
         <article className="bg-white rounded-3xl shadow-md overflow-hidden">
@@ -149,7 +149,7 @@ export default async function PortofolioDetailPage({ params }: Props) {
                       href={item.linkGithub}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-full bg-gray-800 text-white px-6 py-2.5 text-sm font-medium hover:bg-gray-900 transition"
+                      className="inline-flex items-center justify-center w-full md:w-auto rounded-full bg-gray-800 text-white px-6 py-2.5 text-sm font-medium hover:bg-gray-900 transition"
                     >
                       Lihat Kode di GitHub
                     </a>
@@ -163,3 +163,4 @@ export default async function PortofolioDetailPage({ params }: Props) {
     </div>
   );
 }
+
