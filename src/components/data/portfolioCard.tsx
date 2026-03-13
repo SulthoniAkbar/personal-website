@@ -31,6 +31,10 @@ export default function PortfolioCard({
   const fullText = (shortDesc ?? description)?.trim() || "--";
   const isLong = fullText.length > MAX_PREVIEW_CHARS;
   const [expanded, setExpanded] = useState(false);
+  const hasDetail = Boolean(detailHref);
+  const hasProject = Boolean(projectLink);
+  const hasGithub = Boolean(linkGithub);
+  const hasThreeButtons = hasDetail && hasProject && hasGithub;
 
   const shownText =
     expanded || !isLong
@@ -56,7 +60,7 @@ export default function PortfolioCard({
           {title}
         </h2>
 
-        <p className="text-sm text-gray-500 mb-1 flex-1 whitespace-pre-wrap">
+        <p className="text-sm text-gray-500 mb-3 whitespace-pre-wrap">
           {shownText}
         </p>
 
@@ -88,31 +92,33 @@ export default function PortfolioCard({
           </div>
         )}
 
-        <div className="flex flex-col sm:flex-row gap-2 mt-auto">
-          {detailHref && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {hasDetail && (
             <Link
               href={detailHref}
-              className="w-full sm:flex-1 sm:min-w-[120px] text-center bg-purple-600 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-purple-700 transition"
+              className="w-full text-center bg-purple-600 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-purple-700 transition"
             >
               Detail Project
             </Link>
           )}
-          {projectLink && (
+          {hasProject && (
             <a
               href={projectLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:flex-1 sm:min-w-[100px] text-center bg-gray-200 text-gray-800 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-300 transition"
+              className="w-full text-center bg-gray-200 text-gray-800 py-2.5 rounded-lg text-sm font-medium hover:bg-gray-300 transition"
             >
               Visit Project
             </a>
           )}
-          {linkGithub && (
+          {hasGithub && (
             <a
               href={linkGithub}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:flex-1 sm:min-w-[80px] text-center bg-gray-800 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-gray-900 transition"
+              className={`w-full text-center bg-gray-800 text-white py-2.5 rounded-lg text-sm font-medium hover:bg-gray-900 transition${
+                hasThreeButtons ? " sm:col-span-2" : ""
+              }`}
             >
               GitHub
             </a>
