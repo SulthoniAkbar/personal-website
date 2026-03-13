@@ -30,7 +30,7 @@ export default async function PortofolioDetailPage({ params }: Props) {
           href="/#porto"
           className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8 text-sm font-medium"
         >
-          <- Kembali ke Portofolio
+          &lt;- Kembali ke Portofolio
         </Link>
 
         <article className="bg-white rounded-3xl shadow-md overflow-hidden">
@@ -163,4 +163,3 @@ export default async function PortofolioDetailPage({ params }: Props) {
     </div>
   );
 }
-
