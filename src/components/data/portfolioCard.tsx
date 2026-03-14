@@ -27,7 +27,7 @@ export default function PortfolioCard({
   shortDesc,
   technology = [],
 }: CardProps) {
-  const detailHref = slug ? `/portofolio/${encodeURIComponent(slug)}` : null;
+  const detailHref = slug ? `/portofolio/${encodeURIComponent(slug)}` : undefined;
   const fullText = (shortDesc ?? description)?.trim() || "--";
   const isLong = fullText.length > MAX_PREVIEW_CHARS;
   const [expanded, setExpanded] = useState(false);
