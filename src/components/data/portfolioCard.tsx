@@ -27,11 +27,11 @@ export default function PortfolioCard({
   shortDesc,
   technology = [],
 }: CardProps) {
-  const detailHref = slug ? `/portofolio/${encodeURIComponent(slug)}` : undefined;
+  const detailHref = slug ? `/portofolio/${encodeURIComponent(slug)}` : "";
   const fullText = (shortDesc ?? description)?.trim() || "--";
   const isLong = fullText.length > MAX_PREVIEW_CHARS;
   const [expanded, setExpanded] = useState(false);
-  const hasDetail = Boolean(detailHref);
+  const hasDetail = detailHref.length > 0;
   const hasProject = Boolean(projectLink);
   const hasGithub = Boolean(linkGithub);
   const hasThreeButtons = hasDetail && hasProject && hasGithub;
